@@ -1,0 +1,603 @@
+##preorder
+Stack<Integer> stack = new Stack<Integer>();
+While(1)
+{
+    While(p)
+    {
+        System.out.println(p.data);
+        stack.push(p);
+        p=p.left;
+    }
+    if(stack.isEmpty())
+    {
+        break;
+    }
+    p = stack.pop();
+    p=p.right;
+}
+
+## inorder
+Stack<Integer> stack = new Stack<Integer>();
+while(1)
+{
+    while(p)
+    {
+        stack.push(p);
+        p=p.left;
+    }
+    if(stack.isEmpty())
+    {
+        break;
+    }
+    p =stack.pop();
+    System.out.println(p.data);
+    p=p.right;
+}
+
+## inorder predessor
+search(node);
+if(node.left!=null)
+{
+   node = node.left;
+   while(node!=null)
+   {
+        node = node.right;
+   }
+}
+else
+{
+    last right = inorder predessor
+    while(p.data!=node.data)
+    {
+        if(p.data>node.data)
+        {
+            temp=p;
+            p= p.right;
+        }
+        else{
+            p=p.left;
+        }
+    }
+    System.out.println(temp;)
+}
+
+##inorder successor
+If it has right child
+if(node.right!=null)
+{
+    node=node.right;
+    while(node.left!-=null)
+    {
+        node=node.left;
+    }
+    System.out.println(node);
+}
+else
+{
+    while(p.data!=node.data)
+    {
+        if(p.data<node.data)
+        {
+            store =p;
+            p=p.left
+        }
+        else{
+            p=p.right;
+        }
+    }
+    System.out.println(store);
+}
+
+## no of binary search tree that we can form 
+
+int arr[] = new int[n];
+arr[0]=0;
+arr[1]=1;
+for(int i=2;i<=N;i++)
+{
+    int val = 0;
+    for(int j=0;j<i;j++)
+    {
+        val += arr[j]*arr[i-j-1];
+    }
+}
+
+##DFS
+void DFS(root)
+{
+    if(root==null)
+    {
+        return;
+    }
+    System.out.println(root.val);
+    DFS(root.left);
+    DFS(root.right);
+}
+
+##BFS
+Queue<Integer> queue = new Queue<Integer>();
+if(root!=null)
+{
+    queue.enqueue(root);
+while(!queue.isEmpty())
+{
+    temp = dequeue();
+    System.out.println(temp);
+    if(temp.left!=null)
+    {
+        queue.enqueue(temp.left);
+    }
+    if(temp.right!=null)
+    {
+        queue.enqueue(temp.right);
+    }
+}
+}
+
+Convert binary tree to doubly linked list
+head =null , pre = null
+Queue<Node> queue = new Queue<>();
+if(root!=null)
+{
+    queue(root);
+}
+whiel(queue.isEmpty())
+{
+    Root root = queue.dequeue();
+    Node val = cREATEnODDE(root);
+    if(head==null)
+    {
+        head=val;
+    }
+    else
+    {
+        val.previous =pre;
+        pre.next= val; 
+    }
+    pre=val;
+    if(root.left!=null)
+    {
+        queue.enqueue(root.left);
+    }
+    if(root.right!=null)
+    {
+        queue.enqueue(root.right);
+    }
+}
+
+## Binary tree to doubly linked list inorder
+func(node p ,  linked head)
+{
+    if(p==null){
+        return;
+    }
+    func(p.left, head);
+    curr = createnode (p);
+    if(head==null){
+        head = curr;
+    }
+    else
+    {
+        curr.previous = pre;
+        pre.next = curr;
+    }
+    pre = curr;
+    fucn(p.right,head);
+}
+
+## height of binary tree
+int height(root)
+{
+    if(root ==null)
+    {retrun 0;
+    }
+    else
+    {
+        int left = height(root.left);
+        int right = height(root.right);
+        if(left>right)
+        {
+            return 1+left;
+        }
+        else{
+            return 1+right;
+        }
+    }
+}
+
+##diameter of binary tree
+int diameter(root)
+{
+    if(root==null){
+
+        return 0;
+    }
+    int lheight = height(root.left);
+    int rheight = height(root.right);
+
+    int ldiameter  = diameter(root.left);
+    int rdiameter = diameter(root.right);
+
+    return Math.max(lheight+rheight+1, Math.max(ldiameter,rdiameter));
+}
+
+#isomorphic (root1, root2)
+{
+    if(root1==null && root2==null)
+    {
+        return true;
+    }
+    if(root1==null || root2==null)
+    {
+        return false;
+    }
+    if(root1.val!=root2.val)
+    {
+
+        return false;
+    }
+    else
+    {
+        boolean value1 = isomorphic(root1.left, root2.left) && isomorphic(root1.right,root2.right);
+        boolean value 2 = isomorphic(root1.left, root2.right) && isomorphic(root1.right,root2.left);
+        return value || value2;
+    }
+}
+
+##print path root to leaf with given sum
+
+void find (root,sum)
+{
+    if(root==null)
+    {
+        return 0;
+    }
+    else
+    {
+        stack.push(root.val);
+        find(root.left, sum-root.val);
+        find(root.right, sum-root.val);
+        if(sum==0)
+        {
+            print(stack);
+        }
+        stack.pop();
+    }
+}
+## print node having k leaves
+ArrayList<Integer> list = new ArrayList<Integer>();
+void nodeprint(root, k)
+{
+    if(root.left==null && root.right==null)
+    {
+        return 1;
+    }
+    if(root==null)
+    {
+        return 0;
+    }
+    else
+    {
+        nodeprint(root.left,k-1);
+        nodeprint(root.right,k-1);
+        if(k==0)
+        {
+            list.add(root);
+        }
+        return;
+    }
+}
+##lowest common ancestor of two nodes
+void findAncestor(root,int val1, int val2)
+{
+    if(root==null)
+    {
+        return false;
+    }
+    if(root.val == val1 || root.val==val2)
+    {
+        return true;
+    }
+    else
+    {
+        boolean lef = findAncestor(root.left,val1,val2);
+        boolean rig = findAncestor(root.right, vla1,val2);
+        if(left && rig)
+        {
+            list.add(root);
+            return true;
+        }
+        return left || right ;
+    }
+}
+##Bottom view of binary tree
+HashMap<Integer,LinkedList<Root>> map = new HashMap<Integer,LinkedList<Root>>();
+void bottomview(root ,h)
+{
+    if(root==null)
+    {
+        return;
+    }
+    else
+    {
+        bottomview(root.left,h-1);
+        bottomview(root.right,h+1);
+         if(map.containsKey(h))
+    {
+        map.put(h,map.get(h).add(root));
+    }
+    if(!map.containsKey(h))
+    {
+        LinkedList<Root> list = new LinkedList<Root>();
+        list.add(root);
+        map.put(h,list);
+    }
+        return;
+    }
+}
+for(Map.Entry map1 :map.entrySet())
+{
+    LinkedList<Root> li = map1.getValue();
+    System.out.println(li.get(list.size()-1));
+}
+
+## diagonal sum of binary tree
+Queue<Root> queue = new Queue<>();
+queue.enqueue(root);
+queue.enqueue(null);
+while(!queue.isEmpty())
+{
+    val = queue.dequeue();
+    if(val==null)
+    {
+        queue.enqueu(null);
+        val=dequeue();
+        if(val==null)
+        break;
+    }
+    while(val!=null)
+    {
+        sum=sum+val.value;
+        if(val.left!=null)
+        {
+            queue.enqueue(root.left);
+        }
+        val=val.right;
+    }
+    System.out.println(sum);
+
+}
+
+##Level order traversal
+Queue<Root> queue = new Queue<Root>();
+queue.enqueue(root);
+queue.enqueue(null);
+while(!queue.isEmpty())
+{
+    root val = queue.dequeue();
+     if(val==null)
+    {
+        queue.enqueue(null);
+        val=queue.dequeue();
+    }
+    else
+    {
+        if(val.left!=null){
+        queue.enqueue(val.left);
+    }
+    if(val.right!=null){
+        queue.enqueue(val.right);
+    }
+        System.out.println(val.data);
+    }
+}
+
+## left side view of tree;
+void view(root)
+{
+    if(root==null)
+    {
+        return;
+    }
+    else{
+        System.out.println(root.val);
+        view(root.left);
+        view(root.right);
+    }
+}
+
+##print nodes at distance k
+ArrayList<Integer> list = new ArrayList<Integer>();
+void printk(root,k)
+{
+    if(root==null){
+        return;
+    }
+    if(k==0)
+    {
+        list.add(root);
+        return;
+    }
+    else
+    {
+        printk(root.left,k-1);
+        printk(root.right,k-1);
+    }
+}
+
+## print distance between two nodes
+## print acestor of node in binary tree
+ArrayList<Integer> list =new ArrayList<Integer>();
+public boolean printAncestor(root,int val)
+{
+    if(root==null){
+        return false; 
+    }
+    if(root.val==val)
+    {
+        return true;
+    }
+    else
+    {
+        boolean val1 = printAncestor(root.left,val);
+        boolean val2 = printAncestor(root.right,val);
+        if(val1||val2)
+        {
+            System.out.println(root.val);
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+}
+## check if two bianry treeu is identical
+int identical(node p1, node p2)
+{
+    if(p1==null && p2==null){
+        return true;
+    }
+    if(p1==null || p2==null){
+        return false;
+    }
+    if(p1.val!=p2.val){
+        return false;
+    }
+    else{
+        return identical(p1.left,p2.left) && identical(p1.right,p2.right);
+    }
+}
+
+##check one tree is subtree of another
+boolean subTree(node root1, node root2)
+{
+    if(root1==null)
+    {
+        return false;
+    }
+    if(root2==null){
+        return true;
+    }
+    if(identical(root1,root2))
+    {
+        return 1;
+    }
+    else{
+        return subTree(root1.left,root2) || subTree(root1.right,root2);
+    }
+}
+
+##Sum of all the nodes in binary tree
+
+int sum(root)
+{
+    if(root==null)
+    {
+        return 0;
+    }
+    else{
+    int sum = root.val+ sum(root.left) + sum(root.right); 
+    
+    return sum;
+ }
+}
+
+## print root to leaf path in binary tree every path
+
+void printpath(root)
+{
+    if(root==null)
+    {return;}
+    else{
+        stack.push(root.val);
+        printpath(root.left);
+        printpath(root.right);
+        print(stack);
+        stack.pop();
+    }
+}
+
+# print numbr of leaf nodes in a binary tree
+int numberOfLeafNodes(root)
+{
+    if(root.left==null && root.right==null)
+    {
+        return 1;
+    }
+    if(root==null)
+    {
+        return 0;
+    }
+    else
+    {
+        int val = numberOfLeafNodes(root.left) +numberOfLeafNodes(root.right);
+        return val;
+    }
+}
+
+## binary tree is sumTree or not
+
+boolean isSumTree(root)
+{
+    if(root.left==null && root.right==null)
+    {
+        return root.val;
+    }
+    if(root==null)
+    {
+        return 0;
+    }
+    int left = isSumTree(root.left);
+    int right = isSumTree(root.right);
+    if(root.val == (left+right)))
+    {
+        return 2*(root.val);
+    }
+    else{
+        return Integer.MIN_VALUE;
+    }
+    
+}
+
+## is sumtree or not in differet way
+boolean issumtree(root)
+{
+    if(root==null)
+    {
+        return 1;
+    }
+    if(root.left==null && root.right==null)
+    {
+        return root.val;
+    }   
+    int left = sum(root.left);
+    int right= sum(root.right);
+    if(root.val==(left+right))
+    {
+        return issumtree(root.left) && issumtree(root.right);
+    }
+    return 0;
+}
+## lowest common ancestor
+Node node = mull;
+void lowest(root, int val1, int val2)
+{
+    if(root==null)
+    {
+        return false;
+    }
+    if(root.val == val1 || root2.val==val2)
+    {
+        return true;
+    }
+    else
+    {
+        boolean lval = lowest(root.left, val1,val2);
+        boolean rval - lowest(root.right,val1,val2);
+        if(lval && rval)
+        {
+            return true;
+        }
+        return lval||rval;
+    }
+}

@@ -1,0 +1,19 @@
+class EagerSingleton {
+    private static volatile EagerSingleton instance = new EagerSingleton();
+ 
+    // private constructor
+    private EagerSingleton() {
+    }
+ 
+    public static EagerSingleton getInstance() {
+        return instance;
+    }
+}
+
+public class DesignPattern
+{
+    public static void main(String [] args)
+    {
+        
+    }
+}
