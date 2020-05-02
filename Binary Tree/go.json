@@ -1,0 +1,85 @@
+{
+  "@source": "cda6aa0713af4e7bbb6f206f988c00a7",
+  "@source_host": "10.164.3.200",
+  "@application": "mfusion-mgmt-monitor",
+  "ecpConfigInfo": {
+    "reportType": "ecpConfigInfo",
+    "ecp_info": {
+      "ova_build_type": "FIELD",
+      "version": "2018.07.06.1619m"
+    },
+    "disk_space_info": {
+      "totalMB": "257600",
+      "percentUsed": "9%"
+    },
+    "ova_deployment_info": {
+      "ovaDeploymentType": "cms1000",
+      "memorySizeInBytes": "61828292",
+      "hardDiskSizeInGigaBytes": "250",
+      "cpuCount": "70",
+      "cpuModelName": "Intel(R) Xeon(R) CPU E5-2695 v4 @ 2.10GHz"
+    },
+    "ecp_config": {
+      "network_config": {
+        "internal_nw_interface": "ens192",
+        "internal_ipaddress": "10.164.3.200/255.255.255.0",
+        "DNS": "208.67.222.222 208.67.220.220",
+        "DHCP": "false",
+        "internal_gateway": "10.164.3.1",
+        "docker_bip": "172.17.42.1/255.255.0.0"
+      },
+      "externalnetworkconfig": null,
+      "hostname": "ciscoecp-cda6aa0713af4e7bbb6f206f988c00a7",
+      "domain": "null",
+      "ntp_servers": "216.239.35.0 216.239.35.4 216.239.35.8",
+      "etcd_version": "3.1.8",
+      "etcd_port": "2378",
+      "etcd_restore_events": "None",
+      "coreos_version": "2303.4.0",
+      "os_id": "flatcar",
+      "mgmtdelegate_code_version": "2020.02.25.855m",
+      "releaseChannel": "stable",
+      "qosStatus": "on",
+      "local_provisioning": "false",
+      "maintenanceMode": "off",
+      "releaseTag": "2020.03.11.2143m.8",
+      "pendingReleaseTag": "2020.03.11.2143m.8",
+      "dual_ip_mode": "false",
+      "coreos_urls_reachability": {
+        "coreos_release_url": "reachable",
+        "coreos_update_url": "reachable",
+        "coreos_download_url": "reachable"
+      },
+      "proxy_info": {
+        "proxy_status": "na",
+        "proxy_type": "na"
+      }
+    },
+    "system_services": {
+      "ntp_synced": "yes",
+      "containerd_status": "active",
+      "dockerd_status": "up",
+      "etcd_status": "active"
+    }
+  },
+  "@fields": {
+    "levelname": "INFO"
+  },
+  "@environment": "ecp",
+  "@timestamp": "2020-04-21T14:41:40.223Z",
+  "@destination": "SAP",
+  "tags": ["mfusion-mgmt-monitor"],
+  "@ecp": {
+    "hostname": "ciscoecp-cda6aa0713af4e7bbb6f206f988c00a7",
+    "ipAddress": "10.164.3.200",
+    "orgId": "b3af84b0-30ca-4f0b-8f36-0509429dd680",
+    "clusterId": "f00ed400-e723-47bd-a54b-3be3876b743c",
+    "clusterName": "Europe",
+    "uid": "cda6aa0713af4e7bbb6f206f988c00a7",
+    "releaseChannel": "stable",
+    "fqdn": "",
+    "connectorType": "mf_mgmt",
+    "ovaType": "FIELD"
+  },
+  "@sizeBytes": 2003
+}
